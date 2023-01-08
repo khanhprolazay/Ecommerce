@@ -1,0 +1,57 @@
+.aboutus-container {
+    position: relative;
+    gap: 0 90px;
+    height: auto;
+    align-items: flex-start;
+    padding-top: 220px;
+    position: relative;
+}
+
+.aboutus-img-container {
+    width: 200%;
+    height: 662;
+}
+
+
+img[alt='aboutus-img'] {
+    width: 175%;
+    height: 662px;
+    border-top-left-radius: 25%;
+}
+
+.aboutus-infor {
+    display: flex;
+    flex-direction: column;
+    gap: 35px 0;
+    padding-top: 40px;
+}
+
+.aboutus-heading {
+    font-family: 'Frank Ruhl Libre';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 68px;
+    line-height: 78px;
+    margin: 0 0 0 0;
+    
+}
+
+.aboutus-bdesc {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 180%;
+    margin: 0 0 0 0;
+    font-family: 'Lato', sans-serif;
+}
+
+.aboutus-list-container {
+    position: absolute;
+    width: 755px;
+    height: 173px;
+    background-color: whitesmoke;
+    padding-left: 50px;
+    padding-right: 50px;
+    bottom: 0px;
+    right: 0px;
+}
+

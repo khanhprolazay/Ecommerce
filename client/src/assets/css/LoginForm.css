@@ -1,0 +1,148 @@
+.login {
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    margin: 0 24 0 24;
+}
+
+.loginform {
+    background: linear-gradient(112.59deg, #2C5FBA 0%, #FFFFFF 68.81%);
+}
+
+.loginform-container {
+    gap: 0 116px;
+    align-items: stretch;
+}
+
+img[alt="login"] {
+    height: 692px;
+    max-width: 2000px;
+    border-radius: 0px 0px 250px;
+}
+
+.fillup {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 14px 0;
+    margin-top: 101px;
+}
+
+.heading-login {
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0 0 0 0;
+}
+
+.login-input, select {
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    width: 553px;
+    height: 50px;
+    padding: 12px 94px 12px 0;
+    border: 1px solid black;
+    border-radius: 24px;
+    box-sizing: border-box;
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 25px;
+    padding-left: 87px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    margin-top: 22px;
+  }
+
+.bt_login {
+    width: 553px;
+    height: 50px;
+    background: #000000;
+    border-radius: 24px;
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
+    color: white;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    margin-top: 22px;
+    margin-bottom: 14px;
+}
+
+.forget-content {
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    cursor: pointer;
+    color: black;
+}
+
+.forget-content:hover {
+    text-decoration: underline;
+}
+
+.or {
+    gap: 0 15px;
+    margin-top: 20px;
+}
+
+.horizontal-line {
+    width: 206px;
+    border: 0.5px solid black;
+    background-color: black;
+}
+
+.or-content {
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
+    margin: 0 0 0 0;
+}
+
+.login-logo-container {
+    gap: 0 76px;
+    justify-content: center;
+}
+
+img[alt="logo"] {
+    width: 40px;
+    height: 36px;
+}
+
+.signup {
+    gap: 0 5px;
+    justify-content: center;
+}
+
+.signup-content {
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
+}
+
+.--heavy:hover {
+    text-decoration: underline;
+}
+
+.--heavy {
+    font-weight: 700;
+}

@@ -1,0 +1,30 @@
+.history-menu {
+    display: flex;
+    list-style: none;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    background-color: white;
+    margin-bottom: 16px;
+}
+
+.history-menu-link {
+    font-family: sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 0.115em;
+    color: var(--text-color);
+    padding: 16px 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-around;
+    transition-property: background-color;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+}
+
+.history-checked {
+    background-color: var(--heavyblue-color);
+    color: white;
+}

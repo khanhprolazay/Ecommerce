@@ -1,0 +1,167 @@
+.bestseller {
+    margin-top: 157px;
+    margin-bottom: 157px;
+}
+
+.bestseller {
+    background-color: var(--heavyblue-color);
+}
+
+.bestseller-wrapper{
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.bestseller-container {
+    max-width: 1139px;
+    margin: 0 auto;
+}
+
+.bestseller-content-container {
+    min-width: 337px;
+    flex-direction: column;
+    gap: 23px 0;
+    align-items: flex-start;
+}
+
+.bestseller-heading {
+    font-weight: 700;
+    font-size: 52px;
+    line-height: 67px;
+    color: var(--white-color);
+    text-transform: capitalize;
+    margin: 0 0 0 0;
+}
+
+.bestseller-desc {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 180%;
+    color: var(--white-color);
+    text-transform: capitalize;
+    margin: 0 0 0 0;
+}
+
+.seemore-button {
+    font-family: 'Lato', sans-serif;
+    background-color: var(--heavyblue-color);
+    color: white;
+    border: 1px solid;
+    margin-top: 22px;
+    margin-bottom: 103px;
+    padding: 13px 45px;
+}
+
+.scrollmenu {
+    display: flex;
+    gap: 0 25px;
+    overflow-x: auto;
+    width: 100%;
+}
+
+.scrollmenu::-webkit-scrollbar {
+    width: 0;
+}
+
+.card {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    display: inline-block;
+    min-width: 389px;
+    height: 538px;
+    margin: 80px 0 15px 0;
+    background-color: white;
+    border-radius: 6px;
+}
+
+img[alt="bestseller-img"] {
+    height: 387px;
+    width: 389px;
+    border-bottom: 1px solid;
+}
+
+.card-item-name {
+    display: flex;
+    justify-content: center;
+    font-family: 'Frank Ruhl Libre';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 23px;
+    margin: 0 0 0 0;
+}
+
+.price-container {
+    gap: 0 12px;
+    margin: 0 0;
+}
+
+.price {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 180%;
+    text-decoration-line: line-through;
+    margin: 0 0 0 0;
+    color: #C20A0A;
+    opacity: 0.2;
+}
+
+.discountprice {
+    font-family: 'Lato', sans-serif;
+    position: relative;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 180%;
+    margin: 0 0 0 0;
+    color: #34251F;
+    opacity: 0.9;
+}
+
+.card-content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 39px;
+    background-color: white;
+    margin-top: 36px;
+    margin-bottom: 29px;
+    gap: 10px 0
+}
+
+.checked {
+    color: orange;
+}
+
+.rec-slider-container {
+    margin: 0 0 !important;
+}
+
+.rec-pagination {
+    margin: 0 0 50px 0;
+}
+
+.sc-htoDjs {
+    position: relative;
+    bottom: 0px;
+    padding-bottom: 60px ;
+}
+
+.sc-bxivhb {
+    width: 12px;
+    height: 12px;
+}
+
+.sc-EHOje {
+    margin: 0 0;
+}
+
+.kVtMtA {
+    left: -50px;
+}
+
+.bhRnqO {
+    right: -50px;
+}

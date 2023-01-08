@@ -1,0 +1,63 @@
+.newcollection-container {
+    flex-direction: column;
+    gap: 24px 0;
+    position: relative;
+}
+
+.heading {
+    font-family: 'Frank Ruhl Libre';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 68px;
+    padding-top: 100px;
+}
+
+.desc {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.collection-list {
+    gap: 0 24px
+}
+
+.collection-item {
+    position: relative;
+    text-align: center;
+}
+
+img[alt="listItemImage"] {
+    height: 350px;
+}
+
+.collection-listitem-desc {
+    display: inline-block;
+    align-items: center;
+    padding: 7px 70px;
+    background-color: var(--text-color);
+    color: white;
+    font-weight: 900;
+    font-size: 15px;
+    line-height: 22px;
+    text-transform: uppercase;
+    position: absolute;
+    top: 92.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap; /*Không xuống hàng*/
+    font-family: 'Lato', sans-serif;
+}
+
+.decorate-1 {
+    position: absolute;
+    box-sizing: border-box;
+    width: 608px;
+    height: 608px;
+    background: linear-gradient(360deg, rgba(211, 161, 126, 0) -21.17%, #005AFC 89.9%);
+    opacity: 0.3;
+    border: 1px solid #E0F6F8;
+    filter: blur(134.5px);
+    left: -700px;
+    z-index: 1;
+}

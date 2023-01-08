@@ -1,0 +1,27 @@
+GET http://localhost:5000/items/getNumberOfAllItems
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhbmdtaW5oIiwiaWF0IjoxNjcyOTk0MDg3LCJleHAiOjE2NzI5OTQxMTd9.Wx2IeBelcimqUf1CIhgNqjQmbZMi3RC_oo2qCJmH6sg
+###
+POST http://localhost:5500/login
+Content-Type: application/json
+
+{
+    "username": "dangminh",
+    "password": "123"
+}
+###
+
+GET http://localhost:5000/carts/dangminh
+authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhbmdtaW5oIiwiaWF0IjoxNjczMDA1MTI4LCJleHAiOjE2NzMwMDYzMjh9.xu5CrycqqkOf-wg3BVAjNOzWP6-miJpBncQs26HkRDk
+
+###
+POST http://localhost:5000/carts/put
+authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhbmdtaW5oIiwiaWF0IjoxNjczMDA1MTI4LCJleHAiOjE2NzMwMDYzMjh9.xu5CrycqqkOf-wg3BVAjNOzWP6-miJpBncQs26HkRDk
+Content-Type: application/json
+
+{
+    "username": "dangminh",
+    "itemId": "01e043d6-f525-4ea6-b648-50fdf52bd2df",
+    "quantity": 1,
+    "size": "L",
+    "color": "Black"
+}

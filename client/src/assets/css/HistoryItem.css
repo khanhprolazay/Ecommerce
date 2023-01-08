@@ -1,0 +1,107 @@
+.mall {
+    font-weight: 900;
+    font-size: 16px;
+    line-height: 19px;
+    color: white;
+    background-color: var(--heavyblue-color);
+    padding: 0 4px 0 4px;
+}
+
+.shopname {
+    font-weight: 900;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.status-desc {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: right;
+    color: #3EA835;
+}
+
+.not-success {
+    color: #C20A0A;
+}
+
+img[alt="item-img"] {
+    width: 82.26px;
+    height: 73px;
+}
+
+.item-price-history {
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 20px;
+    color: #C20A0A;
+}
+
+.width {
+    width: 82.728%;
+}
+
+.horizontal-line {
+    width: 100%;
+    height: 0.5px;
+    background-color: black;
+}
+
+.total {
+    justify-content: flex-end;
+    padding-top: 32px;
+    gap: 0 107px;
+}
+
+.total-content {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.total-amount {
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 30px;
+    color: #C20A0A;
+}
+
+.item-button {
+    justify-content: end;
+    padding: 29px 0px 17px 0;
+    gap: 0 33px;
+}
+
+.again {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 13px 45px;
+    line-height: 1;
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    background-color: var(--heavyblue-color);
+    cursor: pointer;
+}
+
+.viewshop {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 13px 45px;
+    line-height: 1;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: var(--gray-color);
+    cursor: pointer;
+}
+
+.iuyhb {
+    overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2; /* number of lines to show */
+	line-clamp: 2;
+	-webkit-box-orient: vertical;
+}

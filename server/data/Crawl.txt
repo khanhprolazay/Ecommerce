@@ -1,0 +1,2 @@
+Link lấy hình ảnh: https://cf.shopee.vn/file/9251aba9f04e2f2407578c8bf1764666_tn
+Link lấy thông tin chi tiết sản phẩm dựa theo id: https://shopee.vn/api/v4/pages/get_category?catid=11035568

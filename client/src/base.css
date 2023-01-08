@@ -1,0 +1,85 @@
+:root {
+	--white-color: #fff;
+	--black-color: #000;
+	--text-color: #34251f;
+	--lighblue-color: #e0f6f8;
+	--heavyblue-color: #001e54;
+	--gray-color: #f3f3f3;
+	--bluetext-color: #2361ff;
+}
+
+* {
+	box-sizing: inherit; /*Kế thừa*/
+	z-index: 3;
+}
+
+html {
+	font-family: 'Lato', sans-serif;
+	font-style: normal;
+	color: var(--text-color);
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+.App {
+	max-width: 100%;
+	margin: 0 auto;
+}
+.container-item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+a {
+	text-decoration: none;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+}
+
+.button {
+	display: inline-block;
+	align-items: center;
+	font-family: 'Lato', sans-serif;
+	line-height: 1;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+.line {
+	border-left: 0.5px solid black;
+	height: 56px;
+	left: 50%;
+	margin-left: -3px;
+	top: 0;
+}
+
+.container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.container-1139 {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	max-width: 1139px;
+	margin: 0 auto;
+}
+
+.container-1056 {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	max-width: 1056px;
+	margin: 0 auto;
+}

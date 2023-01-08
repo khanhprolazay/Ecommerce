@@ -1,0 +1,32 @@
+.logo{
+    justify-content: flex-start;
+    align-items: center;
+    background-color: white;
+    gap: 0 21px;
+    max-width: 1272px;
+    top: 22px;
+}
+
+.logo-content {
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 36px;
+    letter-spacing: 0.115em;
+    text-transform: uppercase;
+    margin-top: 22px;
+    margin-bottom: 22px;
+}
+
+.location-content {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: 0.115em;
+}
+
+.fixed {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}

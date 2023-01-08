@@ -1,0 +1,15 @@
+
+.yuhsdf {
+    display: flex;
+    justify-content: space-between;
+    gap: 0 24px;
+}
+
+.yuhsdf button {
+    background-color: var(--heavyblue-color);
+    color: white;
+    font-size: 24px;
+    border: none;
+    padding: 4px 24px;
+    cursor: pointer;
+}

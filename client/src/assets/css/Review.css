@@ -1,0 +1,87 @@
+.review-container {
+    flex-direction: column;
+    gap: 20px 0px;
+    margin-top: 120px;
+}
+
+.review-heading {
+    font-family: 'Frank Ruhl Libre';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 62px;
+    text-align: center;
+    text-transform: capitalize;
+    margin: 0 0 0 0;
+}
+
+.review-desc {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 180%;
+    text-align: center;
+    text-transform: capitalize;
+    margin: 0 0 0 0;
+}
+
+.listreview-container {
+    display: flex;
+    gap: 0 25px;
+}
+
+.reviewitem-container {
+    flex-direction: column;
+    width: 557px;
+    height: 389px;
+    justify-content: flex-start;
+    background-color: var(--lighblue-color);
+}
+
+img[alt="reviewitem-avatar"] {
+    width: 77px;
+    height: 77px;
+    border-radius: 50%;
+    margin-top: 32px;
+    margin-bottom: 10px;
+}
+
+.reviewitem-name {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    text-transform: capitalize;
+    margin: 0 0 0 0;
+}
+
+.reviewitem-career{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    text-align: center;
+    text-transform: capitalize;
+    opacity: 0.5;
+    margin: 0 0 0 0;
+}
+
+.reviewitem-heading {
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 157%;
+    text-align: center;
+    text-transform: capitalize;
+    margin: 0 0 0 0;
+    max-width: 359px;
+    height: auto;
+    margin-top: 25px;
+}
+
+.reviewitem-desc {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 30px;
+    text-align: center;
+    text-transform: capitalize;
+    opacity: 0.8;
+    width: 432px;
+}

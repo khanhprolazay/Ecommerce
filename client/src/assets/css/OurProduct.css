@@ -1,0 +1,101 @@
+.ourproduct-container {
+    flex-direction: column;
+    gap: 40px 0px;
+    position: relative;
+}
+
+.category-container {
+    gap: 0 46px;
+    list-style: none;
+    margin: 0 0 30px 0;
+    padding-left: 0;
+}
+
+.ourpoduct-heading {
+    font-family: 'Frank Ruhl Libre';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 62px;
+    text-align: center;
+    text-transform: capitalize;
+    margin: 0 0 0 0;
+}
+
+.ourproduct-category-item {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: 0.115em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.ourproduct-category-item:hover {
+    padding-bottom: 2px;
+    border-bottom: 2px solid;
+}
+
+.selecteditem {
+    font-weight: 900;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: 0.115em;
+    text-transform: uppercase;
+    padding-bottom: 2px;
+    border-bottom: 2px solid;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 40px 24.98px
+}
+
+.cart .product-card {
+    min-width: 265.77px;
+    height: 388px;
+    border: 1px solid black;
+}
+
+img[alt="ourproduct-img"] {
+    min-width: 265.77px;
+    height: 285px;
+}
+
+.card-content-container--outproduct {
+    display: flex;
+    gap: 10px 0px;
+    align-items: center;
+    padding-left: 0px;
+}
+
+.price-container--ourproduct {
+    align-items: center;
+    gap: 0px 7px;
+}
+
+.decorate-3 {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: linear-gradient(360deg, rgba(211, 161, 126, 0) -21.17%, #005AFC 60.63%);
+    opacity: 0.23;
+    filter: blur(134.5px);
+    left: -35%;
+    top: -25%;
+    z-index: 1;
+}
+
+.decorate-4 {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: linear-gradient(360deg, rgba(211, 161, 126, 0) -21.17%, #005AFC 60.63%);
+    opacity: 0.23;
+    filter: blur(134.5px);
+    right: -65%;
+    bottom: -25%;
+    z-index: 1;
+}

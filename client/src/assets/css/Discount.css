@@ -1,0 +1,92 @@
+.discount {
+    position: relative;
+    background: linear-gradient(360deg, #002c3e -21.17%, #6fc7e1 115.88%);
+    margin-top: 118px;
+}
+
+.discount-content-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px 0px;
+    margin-left: 85px;
+}
+
+img[alt="discount-img"] {
+    width: 386px;
+    height: 460px;
+    margin-top: 44px;
+    margin-right: 111px;
+}
+.discount-heading {
+    font-family: 'Frank Ruhl Libre';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 62px;
+    text-transform: capitalize;
+    margin: 0 0 0 0;
+}
+
+.discount-desc {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 180%;
+    text-transform: capitalize;
+    margin: 0 0 19px 0;
+}
+
+.date-container {
+    gap: 0 18px;
+    margin: 0 0 32px 0;
+}
+
+.time-container {
+    flex-direction: column;
+    justify-content: center;
+    gap: 3px 0px;
+    width: 100px;
+    height: 100px;
+    background-color: white;
+}
+
+.discount-number {
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 50px;
+    text-transform: capitalize;
+    margin: 0 0 0 0;
+}
+
+.discount-text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-transform: capitalize;
+    margin: 0 0 0 0;
+}
+
+.discount-button {
+    background-color: var(--text-color);
+    color: white;
+    padding: 16px 61px;
+}
+
+.rectancle-3 {
+    position: absolute;
+    width: 379px;
+    height: 386px;
+    top: 0px;
+    right: 0px;
+    background: linear-gradient(360deg, #78bcc4 -21.17%, #FFFFFF 115.88%);
+    opacity: 0.6;
+    z-index: 2;
+}
+
+
+.vecto-6 {
+    position: absolute;
+    width: 133px;
+    height: 107px;
+    bottom: 18%;
+    right: 1%;
+}

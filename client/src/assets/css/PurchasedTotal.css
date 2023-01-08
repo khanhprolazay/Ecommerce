@@ -1,0 +1,44 @@
+.purchase-method {
+    background-color: white; 
+    flex-direction: column; 
+    align-items: stretch;
+    border: 1px dashed #34251F;
+    padding: 15px 0px;
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: 0px;
+
+}
+
+.method-heading {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.method-content {
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 20px;
+}
+
+.method-change {
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 20px;
+    color: var(--bluetext-color);
+}
+
+.order {
+    background-color: var(--heavyblue-color);
+    color: white;
+    justify-content: space-around;
+    display: flex;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    width: 216px;
+    height: 45px;
+    margin-right: 25px;
+}

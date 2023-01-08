@@ -1,0 +1,67 @@
+
+.landing-page-header {
+    background-color: var(--heavyblue-color);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 0 20px;
+}
+
+.header-logo {
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    font-size: 25px;
+    line-height: 30px;
+    text-align: left;
+    padding-inline-start: 0px;
+    color: white;
+}
+
+.menu-link {
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.115em;
+    color: var(--text-color);
+    text-transform: uppercase;
+    color: white;
+}
+
+img[alt='landingpage-avatar'] {
+    width: 27px;
+    height: 35px;
+    border-radius: 50%;
+    padding: 5px 0;
+}
+
+.menu-link:hover {
+    text-decoration: underline;
+}
+
+.header-auth {
+    display: flex;
+    align-items: center;
+    gap: 0 20px;
+}
+
+body {
+    background-color: white;
+}
+
+.button-cart {
+    transform: scale(var(--ggs, 1))
+}
+
+.button-login {
+    font-weight: 700;
+    color: white;
+    padding: 14px 30.5px;
+}

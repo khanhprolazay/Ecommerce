@@ -1,0 +1,28 @@
+.vecto {
+    position: absolute;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    width: 131.5px;
+    height: 107px;
+    z-index: 2;
+}
+
+.vecto-item {
+    margin: 0 0 0 0;
+    font-weight: 900;
+    font-size: 20px;
+}
+
+.vecto-1 {
+    top: 12%;
+}
+
+.vecto-2 {
+    right: 42%;
+    bottom: 12%;
+}
+
+.vecto-3 {
+    top: 25%;
+    right: 3%;
+}

@@ -1,0 +1,49 @@
+.location {
+    position: relative;
+    align-items: none;
+    background-color: white;
+    padding-top: 64px;
+    padding-bottom: 32px;
+}
+
+.username-number {
+    font-weight: 900;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: 0.115em;
+}
+
+.address {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: 0.115em;
+    width: 61%;
+}
+
+.change {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    text-align: right;
+    letter-spacing: 0.115em;
+    color: #2361FF;
+}
+.change:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.address-heading {
+    position: absolute;
+    gap: 6.02px;
+    top: 20%
+}
+
+.adrress-heading-content {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.115em;
+    color: var(--heavyblue-color);
+}
