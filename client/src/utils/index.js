@@ -24,12 +24,9 @@ export const formatCash = (cash) => {
 		});
 };
 
-export async function getAccessToken(username, refreshToken) {
-	const body = { username: username, token: refreshToken };
-	const datafromServer = await axios.post(
-		'http://localhost:5500/refreshToken',
-		body
-	);
+export async function getNewAccessToken(refreshToken) {
+	const body = { token: refreshToken };
+	const datafromServer = await axios.post('http://localhost:5500/refreshToken', body);
 	return datafromServer.data.accessToken;
 }
 
@@ -52,14 +49,12 @@ export const requestApi = async (url, data, config, method) => {
 	if (isRefreshTokenExpried()) return false;
 
 	// If not, check access token and call API
-	const username = localStorage.getItem('user').username;
 	const refreshToken = localStorage.getItem('refreshToken');
-
 
 	if (isAccessTokenExpried()) {
 		refreshTokenRequest = refreshTokenRequest
 			? refreshTokenRequest
-			: getAccessToken(username, refreshToken);
+			: getNewAccessToken(refreshToken);
 		// 1 --> null --> refreshToken
 		// 2 --> refreshToken --> refreshToken
 		// 3 --> refreshToken --> refreshToken

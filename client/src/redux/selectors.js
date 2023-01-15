@@ -10,11 +10,14 @@ export const getNewItems = (state) => state.items.newItems;
 
 export const getSaleItems = (state) => state.items.saleItems;
 
+export const getItemToPopup = (state) => state.items.popupItem;
+
 export const getSortField = (state) => state.sort.field;
 
 export const getNumberOfAllItems = (state) => state.items.numberItems;
 
 export const getFilterByStatus = (state) => state.filter.byStatus;
+
 
 export const getNumberOfItemsInCart = createSelector(
 	getUserItems,

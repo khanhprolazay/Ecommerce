@@ -5,39 +5,57 @@ import { requestApi } from '../utils/index';
 import { itemsSlice } from '../redux/slice/ItemsSlice';
 import { userSlice } from '../redux/slice/UserSlice';
 import { useDispatch, useSelector } from 'react-redux';
-import { getUser, getItemsInCart, getUserItems } from '../redux/selectors';
+import { getUser, getItemsInCart } from '../redux/selectors';
+import SuccessPopup from './Popup/SuccessPopup';
+import ErrorPopup from './Popup/ErrorPopup';
+import Loading from './Loading';
+import { useState } from 'react';
 
-function PurchasedTotal(props) {
+function PurchasedTotal() {
     const dispatch = useDispatch();
     const user = useSelector(getUser);
-    const items = useSelector(getUserItems);
-    const itemsInCart = useSelector(getItemsInCart);
+    const cart = useSelector(getItemsInCart);
     const navigate = useNavigate();
+    const [state, setState] = useState({ state: 'init', message: '', closePopup: '' });
 
     let totalItemPrice = 0;
     let totalShipFee = 0;
     let total = 0;
 
-    itemsInCart.forEach((item) => {
+    cart.forEach((item) => {
         let priceAfterDiscount = item.price * (1 - item.discount) * item.quantity;
         totalItemPrice += priceAfterDiscount;
         totalShipFee += item.shipFee;
         total += item.shipFee + priceAfterDiscount;
     })
 
+    const closePopup = () => {
+        setState({ ...state, state: 'init' })
+    }
+
     const order = async () => {
-        const data = { username: user.username, items: items };
+        setState({...state, state: 'loading', closePopup: () => true});
+        const data = { username: user.username, cart: cart };
 
-        const result = await requestApi('http://localhost:5000/carts/order', data, {}, 'post');
-        if (result === false) { // Refresh token is expried => re-login
-            dispatch(itemsSlice.actions.deleteUserItems());
-            dispatch(userSlice.actions.delete());
-            localStorage.clear();
-            navigate('/login');
-            return;
-        }
+        requestApi('http://localhost:5000/carts/order', data, {}, 'post').then((result) => {
+            if (result === false) { // Refresh token is expried => re-login
+                dispatch(itemsSlice.actions.deleteUserItems());
+                dispatch(userSlice.actions.delete());
+                localStorage.clear();
+                navigate('/login');
+                return;
+            }
 
-        dispatch(itemsSlice.actions.setUserItems(result.data));
+            // Update card successfully. Request to server to get again cart and store
+            if (result.status === 200) {
+                requestApi(`http://localhost:5000/carts/${user.username}`, {}, {}, 'get')
+                    .then((data) => {
+                        dispatch(itemsSlice.actions.setUserItems(data.data));
+                        setState({ ...state, state: 'success', message: 'Đặt hàng thành công', closePopup: closePopup });
+                    })
+            }
+        }).catch((err) => setState({ ...state, state: 'erorr', message: err.message, closePopup: closePopup }));
+
     }
 
     return (
@@ -108,6 +126,14 @@ function PurchasedTotal(props) {
                 </div>
                 <button className='button order' onClick={order}>ĐẶT HÀNG</button>
             </div>
+            {function () {
+                switch (state.state) {
+                    case 'loading': return <Loading />
+                    case 'success': return <SuccessPopup state={state} />
+                    case 'error':   return <ErrorPopup state={state} />
+                    default:        return;
+                }
+            }.call(this)}
         </div>
     );
 }

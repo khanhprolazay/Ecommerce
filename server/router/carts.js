@@ -7,6 +7,6 @@ const cartController = require('../controllers/CartController');
 // /carts
 router.get('/:username', authen.authenToken, cartController.getItemOfUser);
 router.post('/order', authen.authenToken, cartController.order);
-router.post('/put', authen.authenToken, cartController.updateCart);
+router.post('/put', authen.authenToken, cartController.insertItemToCart);
 
 module.exports = router;

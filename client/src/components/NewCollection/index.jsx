@@ -30,7 +30,7 @@ function NewCollection(props) {
                     <Carousel.Item key={id}>
                         <NewCollectionItem item={item.doc} />
                     </Carousel.Item>
-                ))}
+                ))} 
             </Carousel>
             <Vecto style={vecto} />
             <div className='decorate-1'></div>

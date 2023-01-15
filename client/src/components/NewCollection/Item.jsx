@@ -1,15 +1,14 @@
-import { useState } from 'react';
-import CustomPopup from '../CustomPopup';
+import { useDispatch } from "react-redux";
+import { itemsSlice } from "../../redux/slice/ItemsSlice";
 
 function NewCollectionItem(props) {
     const item = props.item;
-    const [openPopup, setOpenPopup] = useState(false);
+    const dispatch = useDispatch();
 
     return (
-        <div className="collection-item" onClick={() => { setOpenPopup(true) }}>
+        <div className="collection-item" onClick={() => dispatch(itemsSlice.actions.setPopupItem(item))}>
             <img src={item.image} alt="listItemImage" />
             <div className="collection-listitem-desc">{item.category}</div>
-            <CustomPopup openPopup={openPopup} setOpenPopup={setOpenPopup} item={item}/>
         </div>
     )
 };

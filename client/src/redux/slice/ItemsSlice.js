@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initState = {
 	userItems: JSON.parse(localStorage.getItem('items')),
 	numberItems: 0,
+	popupItem: null
 };
 
 export const itemsSlice = createSlice({
@@ -18,6 +19,14 @@ export const itemsSlice = createSlice({
 		deleteUserItems: (state, action) => {
 			localStorage.setItem('items', null);
 			state.userItems = null;
+		},
+
+		setPopupItem: (state, action) => {
+			state.popupItem = action.payload;
+		},
+
+		deletePopupItem: (state, action) => {
+			state.popupItem = null;
 		},
 
 		userItemsUpdateQuantity: (state, action) => {

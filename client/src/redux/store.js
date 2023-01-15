@@ -10,7 +10,7 @@ const store = configureStore({
         sort: sortSlice.reducer,
         user: userSlice.reducer,
         items: itemsSlice.reducer,
-        filter: filterSlice.reducer
+        filter: filterSlice.reducer,
     }
 })
 

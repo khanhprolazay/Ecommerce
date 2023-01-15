@@ -9,7 +9,6 @@ router.put('/', itemsController.addItem)
 router.get('/:id/get', itemsController.getItemById)
 router.get('/:sortBy/:limit/:skip', itemsController.getItems);
 router.get('/getNumberOfAllItems', itemsController.getNumberOfAllItems);
-router.post('/:id/updateQuantity', itemsController.updateQuantity);
 
 
 module.exports = router;

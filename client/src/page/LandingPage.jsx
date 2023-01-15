@@ -6,6 +6,7 @@ import BestSeller from '../components/BestSeller';
 import OurProduct from '../components/OurProduct';
 import Discount from '../components/Discount';
 import Footer from '../components/Footer';
+import OrderPopup from '../components/Popup/OrderPopup';
 
 function LandingPage(props) {
 
@@ -19,6 +20,7 @@ function LandingPage(props) {
       <OurProduct />
       <Discount />
       <Footer />
+      <OrderPopup />
     </div>
   )
 }

@@ -1,14 +1,14 @@
 import Star from '../Start';
-import { useState } from 'react';
-import CustomPopup from '../CustomPopup';
+import { useDispatch } from 'react-redux';
 import { formatCash } from '../../utils/index';
+import { itemsSlice } from "../../redux/slice/ItemsSlice";
 
 function OurProductItem(props) {
     const item = props.item;
-    const [openPopup, setOpenPopup] = useState(false);
+    const dispatch = useDispatch();
 
     return (
-        <div className='cart product-card' onClick={() => { setOpenPopup(true) }}>
+        <div className='cart product-card' onClick={() => dispatch(itemsSlice.actions.setPopupItem(item))}>
             <img
                 src={item.image}
                 alt='ourproduct-img'
@@ -25,7 +25,6 @@ function OurProductItem(props) {
                     </p>
                 </div>
             </div>
-            <CustomPopup openPopup={openPopup} setOpenPopup={setOpenPopup} item={item}/>
         </div>
     );
 }

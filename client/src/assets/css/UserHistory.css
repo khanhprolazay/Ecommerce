@@ -10,7 +10,7 @@
 
 .history-menu-link {
     font-family: sans-serif;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 18px;
     line-height: 24px;
     letter-spacing: 0.115em;
@@ -19,12 +19,61 @@
     cursor: pointer;
     display: flex;
     justify-content: space-around;
-    transition-property: background-color;
-    transition-duration: 0.5s;
-    transition-timing-function: ease-in-out;
 }
 
-.history-checked {
+.container-item nav {
+    display: flex;
+    position: relative;
+}
+
+.container-item nav label {
+    position: relative;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.container-item nav .tab {
+    position: absolute;
+    height: 100%;
+    width: 20%;
+    left: 0;
+    bottom: 0;
     background-color: var(--heavyblue-color);
+    z-index: 1;
+    transition: 0.6s ;
+}
+
+
+.container-item nav #all:checked ~ label.all,
+.container-item nav #in_cart:checked ~ label.in_cart,
+.container-item nav #on_shipping:checked ~ label.on_shipping,
+.container-item nav #shipped:checked ~ label.shipped,
+.container-item nav #cancelled:checked ~ label.cancelled {
     color: white;
+}
+
+.container-item nav #all:checked ~ .tab {
+    width: 18%;
+}
+
+.container-item nav #in_cart:checked ~ .tab {
+    left: 18%;
+    width: 28%;
+}
+.container-item nav #on_shipping:checked ~ .tab {
+    left: 46%;
+    width: 18%;
+}
+.container-item nav #shipped:checked ~ .tab {
+    left: 64%;
+    width: 18%;
+}
+.container-item nav #cancelled:checked ~ .tab {
+    left: 82%;
+    width: 18%;
+}
+
+
+.container-item nav input {
+    display: none;
 }

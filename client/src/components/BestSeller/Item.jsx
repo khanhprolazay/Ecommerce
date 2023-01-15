@@ -1,15 +1,15 @@
 import Star from '../Start';
-import CustomPopup from '../CustomPopup';
-import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { formatCash } from '../../utils/index';
+import { itemsSlice } from "../../redux/slice/ItemsSlice";
 
 function BestSellerItem(props) {
     const item = props.item;
+    const dispatch = useDispatch();
     const styleContainer = { margin: '0 0' };
-    const [openPopup, setOpenPopup] = useState(false);
 
     return (
-        <div className='container-1139 card' onClick={() => { setOpenPopup(true) }}>
+        <div className='container-1139 card' onClick={() => dispatch(itemsSlice.actions.setPopupItem(item))}>
             <img
                 src={item.image}
                 alt='bestseller-img'
@@ -27,7 +27,6 @@ function BestSellerItem(props) {
                     </p>
                 </div>
             </div>
-            <CustomPopup openPopup={openPopup} setOpenPopup={setOpenPopup} item={item}/>
         </div>
     );
 }
