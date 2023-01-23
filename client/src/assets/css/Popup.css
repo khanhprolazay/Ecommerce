@@ -1,15 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400);
 
 
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: poppins;
-	text-decoration: none;
-	list-style: none;
-}
-
 @keyframes move {
 	0% {
 		left: 0px;
@@ -21,14 +12,25 @@
 	}
 }
 
+@keyframes change-bg {
+	0% {
+		background: none;
+	}
+	100% {
+		background: rgba(0, 0, 0, 0.8);
+	}
+}
+
 .uiewr {
 	display: flex;
 	position: fixed;
 	top: 0;
 	left: 0;
-	background: rgba(0, 0, 0, 0.8);
 	width: 100%;
 	height: 100%;
+	background: rgba(0, 0, 0, 0.8);
+	animation-name: change-bg;
+	animation-duration: 0.2s;
 }
 
 .mainContnt {

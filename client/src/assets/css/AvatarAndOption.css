@@ -3,6 +3,10 @@ header {
     background-color: var(--heavyblue-color);
 }
 
+li {
+    list-style: none;
+}
+
 .container {
     max-width: 1272px;
 }
@@ -88,4 +92,74 @@ img[alt="category-avatar"] {
 
 .checked {
     color: #ee4d2d;
+}
+
+.history-wrapper {
+    display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	max-width: 1056px;
+	margin: 0 auto;
+    gap: 0 50px;
+}
+
+.history-menu-wrapper {
+    width: 25%;
+}
+
+.history-avatar-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 24px;
+    gap: 0px 8px;
+}
+
+.history-avatar-wrapper p {
+    font-size: 15px;
+}
+
+
+img[alt='category-avatar'] {
+    width: 45px;
+    height: 45px;
+}
+
+.history-menu-wrapper ul input {
+    display: none;
+}
+
+.history-menu-wrapper li {
+    padding-top: 15px;
+    cursor: pointer;
+    transition: color 0.1s ease;
+}
+
+.history-menu-wrapper label {
+    transition: color 0.1s ease;
+}
+
+.history-menu-wrapper label:hover{
+    color: red;
+}
+
+.history-menu-icon {
+    padding-right: 8px;
+}
+
+.history-menu-wrapper ul ul {
+    max-height: 0px;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+
+.history-menu-wrapper ul #history-menu-account:checked ~ li.history-menu-account ul,
+.history-menu-wrapper ul #history-menu-order:checked ~ li.history-menu-order ul,
+.history-menu-wrapper ul #history-menu-notify:checked ~ li.history-menu-notify ul,
+.history-menu-wrapper ul #history-menu-logout:checked ~ li.history-menu-logout ul {
+    max-height: 200px;
+    opacity: 1;
+    padding-left: 23px;
 }

@@ -1,3 +1,4 @@
+import React from 'react';
 import '../assets/css/Footer.css';
 
 function Footer() {
@@ -17,4 +18,4 @@ function Footer() {
         </section>
     );
 }
-export default Footer;
+export default React.memo(Footer, () => true);

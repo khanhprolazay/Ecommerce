@@ -1,4 +1,4 @@
-import '../assets/css/Pagnition.css'
+import '../../../assets/css/Pagnition.css'
 
 function Pagnition(props) {
     let pag = props.pag;

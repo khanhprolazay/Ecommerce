@@ -1,11 +1,11 @@
-import '../assets/css/LoginForm.css';
+import '../../assets/css/LoginForm.css';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
-import { userSlice } from '../redux/slice/UserSlice';
-import { itemsSlice } from '../redux/slice/ItemsSlice';
-import { requestApi } from '../utils';
+import { userSlice } from '../../redux/slice/UserSlice';
+import { itemsSlice } from '../../redux/slice/ItemsSlice';
+import { requestApi } from '../../utils';
 
 function LoginForm(props) {
     const [username, setUsername] = useState('');
@@ -105,11 +105,11 @@ function LoginForm(props) {
                         className='container-1139 login-logo-container'
                     >
                         <img
-                            src={require('../assets/img/facebook.png').default}
+                            src={require('../../assets/img/facebook.png').default}
                             alt='logo'
                         />
                         <img
-                            src={require('../assets/img/google.png').default}
+                            src={require('../../assets/img/google.png').default}
                             alt='logo'
                         />
                     </div>

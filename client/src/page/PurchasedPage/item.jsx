@@ -1,12 +1,12 @@
-import '../assets/css/CartItem.css';
+import '../../assets/css/CartItem.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTag } from '@fortawesome/free-solid-svg-icons';
-import { formatCash } from '../utils/index';
+import { formatCash } from '../../utils/index';
 import { useDispatch } from 'react-redux';
-import { itemsSlice } from '../redux/slice/ItemsSlice';
+import { itemsSlice } from '../../redux/slice/ItemsSlice';
 import { useState } from 'react';
 
-function PurchasedItem(props) {
+function Item(props) {
     let item = props.item;
     const dispatch = useDispatch();
     const [quantity, setQuantity] = useState(item.quantity);
@@ -166,4 +166,4 @@ function PurchasedItem(props) {
         </div>
     );
 }
-export default PurchasedItem;
+export default Item;

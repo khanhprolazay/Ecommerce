@@ -1,8 +1,8 @@
 import { Routes, Route } from 'react-router-dom';
-import LandingPage from './page/LandingPage';
-import LoginPage from './page/LoginPage';
-import HistoryPage from './page/HistoryPage';
-import PurchasedPage from './page/PurchasedPage';
+import LandingPage from './page/LandingPage/index';
+import LoginPage from './page/LoginPage/index';
+import HistoryPage from './page/HistoryPage/index';
+import PurchasedPage from './page/PurchasedPage/index';
 import { useSelector, useDispatch } from 'react-redux';
 import { getUser } from './redux/selectors';
 import { isEmptyObject } from './utils/index';

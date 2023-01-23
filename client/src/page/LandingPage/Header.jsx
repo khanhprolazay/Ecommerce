@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
-import '../assets/css/LandingPageHeader.css'
-import CartIcon from './CartIcon';
+import '../../assets/css/LandingPageHeader.css'
+import CartIcon from '../../components/CartIcon';
 import { useSelector } from 'react-redux';
-import { getUser } from '../redux/selectors';
-import { isEmptyObject } from '../utils/index';
+import { getUser } from '../../redux/selectors';
+import { isEmptyObject } from '../../utils/index';
 
-function LandingPageHeader(props) {
+function Header(props) {
     const user = useSelector(getUser);
 
     return (
@@ -46,4 +46,4 @@ function LandingPageHeader(props) {
     )
 }
 
-export default LandingPageHeader;
+export default Header;

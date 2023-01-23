@@ -1,7 +1,7 @@
 import Carousel from 'react-grid-carousel';
 import { useState } from 'react';
-import LoginForm from '../components/LoginForm';
-import SignUpForm from '../components/SignUpForm';
+import LoginForm from './LoginForm';
+import SignUpForm from './SignUpForm';
 
 function LoginPage(props) {
     const [isSignup, setIsSignUp] = useState(false);
@@ -25,31 +25,31 @@ function LoginPage(props) {
                     >
                         <Carousel.Item>
                             <img
-                                src={require('../assets/img/hero-image.png').default}
+                                src={require('../../assets/img/hero-image.png').default}
                                 alt='login'
                             />
                         </Carousel.Item>
                         <Carousel.Item>
                             <img
-                                src={require('../assets/img/img1.jpg').default}
+                                src={require('../../assets/img/img1.jpg').default}
                                 alt='login'
                             />
                         </Carousel.Item>
                         <Carousel.Item>
                             <img
-                                src={require('../assets/img/img2.jpg').default}
+                                src={require('../../assets/img/img2.jpg').default}
                                 alt='login'
                             />
                         </Carousel.Item>
                         <Carousel.Item>
                             <img
-                                src={require('../assets/img/img3.jpg').default}
+                                src={require('../../assets/img/img3.jpg').default}
                                 alt='login'
                             />
                         </Carousel.Item>
                         <Carousel.Item>
                             <img
-                                src={require('../assets/img/img4.jpg').default}
+                                src={require('../../assets/img/img4.jpg').default}
                                 alt='login'
                             />
                         </Carousel.Item>

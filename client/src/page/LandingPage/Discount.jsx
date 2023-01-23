@@ -1,5 +1,5 @@
-import Vecto from './Vecto';
-import '../assets/css/Discount.css';
+import Vecto from '../../components/Vecto';
+import '../../assets/css/Discount.css';
 
 function Discount() {
     const vecto = { bottom: '18%', right: '1%' };

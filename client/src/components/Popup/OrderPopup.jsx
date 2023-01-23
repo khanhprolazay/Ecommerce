@@ -31,7 +31,7 @@ function OrderPopup() {
     }
 
     const closePopupWithEvent = (e) => {
-        if (e.target.id === 'chidlren')
+        if (e.target.id === 'children') 
             closePopup(); 
     }
 

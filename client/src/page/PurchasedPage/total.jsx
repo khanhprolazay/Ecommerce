@@ -1,17 +1,16 @@
-import '../assets/css/PurchasedTotal.css';
-import { formatCash } from '../utils/index';
+import '../../assets/css/PurchasedTotal.css';
+import { formatCash, requestApi } from '../../utils/index';
 import { useNavigate } from 'react-router-dom';
-import { requestApi } from '../utils/index';
-import { itemsSlice } from '../redux/slice/ItemsSlice';
-import { userSlice } from '../redux/slice/UserSlice';
+import { itemsSlice } from '../../redux/slice/ItemsSlice';
+import { userSlice } from '../../redux/slice/UserSlice';
 import { useDispatch, useSelector } from 'react-redux';
-import { getUser, getItemsInCart } from '../redux/selectors';
-import SuccessPopup from './Popup/SuccessPopup';
-import ErrorPopup from './Popup/ErrorPopup';
-import Loading from './Loading';
+import { getUser, getItemsInCart } from '../../redux/selectors';
+import SuccessPopup from '../../components/Popup/SuccessPopup';
+import ErrorPopup from '../../components/Popup/ErrorPopup';
+import Loading from '../../components/Loading';
 import { useState } from 'react';
 
-function PurchasedTotal() {
+function Total() {
     const dispatch = useDispatch();
     const user = useSelector(getUser);
     const cart = useSelector(getItemsInCart);
@@ -137,4 +136,4 @@ function PurchasedTotal() {
         </div>
     );
 }
-export default PurchasedTotal;
+export default Total;
