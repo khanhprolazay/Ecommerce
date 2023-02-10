@@ -1,6 +1,6 @@
 const { v4: uuidv4 } = require('uuid');
-const UserModel = require('../models/UserModel');
-const ItemModel = require('../models/ItemModel');
+const UserModel = require('./UserModel');
+const ProductModel = require('./ProductModel');
 
 class CartModel {
 	#dbName;
@@ -12,26 +12,41 @@ class CartModel {
 		this.#itemDB = 'clothes-shop';
 	}
 
-	async getItemsByUsername(username) {
+	async getProductsByUsername(username) {
 		let itemsOfUser = await UserModel.getFieldsByUsername(username, ['items']);
 		if (itemsOfUser) {
 			for (var i in itemsOfUser) {
-				const itemInfor = await ItemModel.findItemById(itemsOfUser[i].itemId);
+				const itemInfor = await ProductModel.findProductById(itemsOfUser[i].itemId);
 				itemsOfUser[i] = { ...itemsOfUser[i], ...itemInfor };
 			}
 		}
 		return itemsOfUser;
 	}
 
-	async isItemAlreadyInCart(username, itemId) {
-		const itemsOfUser = await UserModel.getFieldsByUsername(username, ['items']);
-		return itemsOfUser.some((item) => item._id === itemId && item.status === 'in_cart');
+	async isAlreadyHaveProduct(username, itemId) {
+		const itemsOfUser = await UserModel.getFieldsByUsername(username, [
+			'items',
+		]);
+		return itemsOfUser.some(
+			(item) => item._id === itemId && item.status === 'in_cart'
+		);
 	}
 
-	async insertItemToCart(username, item) {
+	async insertProduct(username, item) {
 		let itemsOfUser = await UserModel.getFieldsByUsername(username, ['items']);
-		itemsOfUser.push({ ...item, orderId: uuidv4() });
+
+		// If Cart is already have item, get orderId of that item
+		let index = itemsOfUser.findIndex((item) => item.status === 'in_cart');
+		let orderId = index === -1 ? uuidv4() : itemsOfUser[index].orderId;
+
+		itemsOfUser.push({ ...item, orderId: orderId });
 		await UserModel.updateUser(username, { items: itemsOfUser });
+	}
+
+	async deleteProduct(username, itemId) {
+		let itemsInCart = await UserModel.getFieldsByUsername(username, ['items']);
+		itemsInCart = itemsInCart.filter((item) => item.itemId !== itemId);
+		await UserModel.updateUser(username, { items: itemsInCart });
 	}
 
 	// Update user item when order
@@ -40,15 +55,20 @@ class CartModel {
 
 		//Check if order quantity is greater than quantity in stock
 		for (var i in cart) {
-			let stockQuantity = await ItemModel.getStockQuantityById(cart[i].itemId);
-			if (cart[i].quantity > stockQuantity) 
-				throw new Error(`Sản phẩm ${cart[i].productName} đang vượt quá số lượng trong kho`);
+			let stockQuantity = await ProductModel.getStockQuantityById(cart[i].itemId);
+			if (cart[i].quantity > stockQuantity) {
+				throw new Error(
+					`Sản phẩm ${cart[i].productName} đang vượt quá số lượng trong kho`
+				);
+			}
 		}
 
 		for (var i in cart) {
-			const index = items.findIndex((item) => item.orderId === cart[i].orderId);
+			const index = items.findIndex(
+				(item) => item.status === 'in_cart' && item.itemId === cart[i].itemId
+			);
 
-			// If there is an item having the order quantity 0, skip it 
+			// If there is an item having the quantity equal 0, skip it
 			if (cart[i].quantity === 0) {
 				items.splice(index, 1);
 				continue;
@@ -56,7 +76,7 @@ class CartModel {
 
 			items[index].quantity = cart[i].quantity;
 			items[index].status = 'on_shipping';
-			await ItemModel.updateQuantityWhenOrder(cart[i].itemId, cart[i].quantity);
+			await ProductModel.updateQuantityWhenOrder(cart[i].itemId, cart[i].quantity);
 		}
 		await UserModel.updateUser(username, { items: items });
 	}

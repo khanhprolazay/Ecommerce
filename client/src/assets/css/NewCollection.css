@@ -10,12 +10,14 @@
     font-weight: 700;
     font-size: 68px;
     padding-top: 100px;
+    color: var(--brown-color);
 }
 
 .desc {
     font-family: 'Lato', sans-serif;
     font-weight: 400;
     font-size: 20px;
+    color: var(--brown-color);
 }
 
 .collection-list {

@@ -1,7 +1,7 @@
 import Header from '../../components/Header';
 import Logo from '../../components/Logo';
-import Address from '../../components/Address';
-import HeadingCategory from '../../components/HeadingCategory';
+import Address from './address';
+import Category from './category';
 import Item from './item'
 import Total from './total';
 import Footer from '../../components/Footer';
@@ -19,12 +19,11 @@ function PurchasedPage() {
             <Header user={user} />
             <Logo location='Thanh toán' />
             <Address user={user} />
-            <HeadingCategory />
-            <section>
-                {itemsInCart.map(item => { return <Item item={item} />;})}
-            </section>
+            <Category />
+            {itemsInCart.map(item => { return <Item item={item} />;})}
             <Total itemsInCart={itemsInCart} />
             <Footer />
+            
         </div>
     );
 }

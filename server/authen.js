@@ -9,7 +9,7 @@ module.exports = {
 
 		jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, data) => {
             if (err) { 
-				res.sendStatus(403); // Forbidden
+				res.status(403).send(err); // Forbidden
 				return;
 			}; 
             next();

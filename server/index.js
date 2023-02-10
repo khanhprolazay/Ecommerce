@@ -7,8 +7,9 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 // router
-const items = require('./router/items.js');
-const carts = require('./router/carts.js');
+const product = require('./router/product.js');
+const cart = require('./router/cart.js');
+const shop = require('./router/shop.js');
 
 // PORT
 const app = express();
@@ -21,8 +22,9 @@ app.use(cors());
 app.use(morgan('combined'));
 
 // Address
-app.use('/items', items);
-app.use('/carts', carts);
+app.use('/product', product);
+app.use('/cart', cart);
+app.use('/shop', shop);
 
 try {
     app.listen(PORT, () => {

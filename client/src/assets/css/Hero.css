@@ -19,6 +19,7 @@
     line-height: 78px;
     margin-bottom: 30px;
     text-transform: capitalize;
+    color: var(--brown-color);
 }
 
 .hero-desc {    
@@ -30,6 +31,7 @@
     line-height: 180%;
     text-transform: capitalize;
     margin-bottom: 30px;
+    color: var(--brown-color);
 }
 
 .button--shop {
@@ -42,7 +44,7 @@
     border: none;
     outline: none;
     font-weight: 900;
-    background-color: var(--text-color);
+    background-color: var(--brown-color);
     justify-content: center;
     color: white;
     width: 223px;
@@ -54,6 +56,7 @@ img[alt="heroImage"] {
     height: 650px;
     border-bottom-left-radius: 25%;
     margin-bottom: 112px;
+    z-index: 100;
 }
 
 .rectancle-1 {

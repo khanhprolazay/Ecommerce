@@ -1,16 +1,16 @@
 const { v4: uuidv4 } = require('uuid');
 const couchDB = require('../resource/dbConfig');
 
-class ItemModel {
+class ProductModel {
     #dbName;
     constructor() {
         this.#dbName = 'clothes-shop';
     }
 
-    async getItems(sortBy, limit, skip) {
+    async getProducts(_sortBy, _limit, _skip) {
         let sortField = '';
 
-		switch (sortBy) {
+		switch (_sortBy) {
 			case 'hot':
 				sortField = 'sellQuantity';
 				break;
@@ -27,48 +27,49 @@ class ItemModel {
 		const queryOptions = {
 			descending: true,
 			include_docs: true,
-			limit: limit,
-			skip: skip
+			limit: _limit,
+			skip: _skip
 		};
+
 		const viewUrl = `_design/sort/_view/sort-by-${sortField}`;
 		const data = await couchDB.get(this.#dbName, viewUrl, queryOptions)
 		return data;
     }
 
-    async findItemById(id) {
+    async findProductById(id) {
         const query = { selector: { _id: id } };
         const data = await couchDB.mango(this.#dbName, query);
         return data.data.docs[0];
     }
 
-    async insertItem(item) {
+    async insertProduct(item) {
         await couchDB.insert(this.#dbName, {...item, _id: uuidv4()});
     }
 
-    async updateItem(id, updatedField) {
-        const item = await this.findItemById(id);
+    async updateProduct(id, updatedField) {
+        const item = await this.findProductById(id);
         await couchDB.update(this.#dbName, {...item, ...updatedField});
     }
 
     async updateQuantityWhenOrder(id, quantity) {
-        const item = await this.findItemById(id);
+        const item = await this.findProductById(id);
         if (quantity > item.stockQuantity) return;
-        await this.updateItem(id, {
+        await this.updateProduct(id, {
             stockQuantity: item.stockQuantity - quantity,
 		    sellQuantity: item.sellQuantity + quantity,
         })
     }
 
-    async getFieldItemById(id, fields) {
+    async getFieldById(id, fields) {
         const query = { selector: { _id: id }, fields: fields };
         let data =  await couchDB.mango(this.#dbName, query);
         return data.data.docs[0][fields];
     }
 
     async getStockQuantityById(id) {
-        return this.getFieldItemById(id, ['stockQuantity']);
+        return this.getFieldById(id, ['stockQuantity']);
     }
 
 }
 
-module.exports = new ItemModel();
+module.exports = new ProductModel();

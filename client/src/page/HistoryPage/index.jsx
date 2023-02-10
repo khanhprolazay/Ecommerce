@@ -6,12 +6,12 @@ import Menu from './menu';
 import UserHistory from './UserHistory/index';
 import Footer from '../../components/Footer';
 import { useState } from 'react';
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { getUser } from '../../redux/selectors';
 import { userSlice } from '../../redux/slice/UserSlice';
 import { itemsSlice } from '../../redux/slice/ItemsSlice';
 import { useDispatch, useSelector } from 'react-redux';
+import userApi from '../../api/UserApi';
 
 function HistoryPage() {
 	const navigate = useNavigate();
@@ -20,18 +20,12 @@ function HistoryPage() {
 	const [option, setOption] = useState('my-account');
 
 	const logout = () => {
-		const accessToken = localStorage.getItem('accessToken');
-		axios
-			.post('http://localhost:5500/logout', {
-				username: user.username,
-				token: accessToken,
-			})
-			.then(() => {
-				dispatch(itemsSlice.actions.setUserItems(null));
-				dispatch(userSlice.actions.delete());
-				localStorage.clear();
-				navigate('/');
-			});
+		userApi.logout(user.username).then(() => {
+			dispatch(itemsSlice.actions.setUserItems(null));
+			dispatch(userSlice.actions.delete());
+			localStorage.clear();
+			navigate('/');
+		});
 	};
 
 	return (

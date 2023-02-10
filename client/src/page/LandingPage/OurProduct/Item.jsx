@@ -1,4 +1,4 @@
-import Star from '../../../components/Start';
+import Star from '../../../components/Stars';
 import { useDispatch } from 'react-redux';
 import { formatCash } from '../../../utils/index';
 import { itemsSlice } from '../../../redux/slice/ItemsSlice';

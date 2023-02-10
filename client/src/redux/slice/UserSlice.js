@@ -10,6 +10,7 @@ if (initUser !== null) {
 		fullname: initUser.fullname,
 		image: initUser.image,
 		number: initUser.number,
+		location: initUser.location,
 	};
 }
 
@@ -25,6 +26,13 @@ export const userSlice = createSlice({
 			state.fullname = action.payload.fullname;
 			state.image = action.payload.image;
 			state.number = action.payload.number;
+			state.location = action.payload.location;
+		},
+		setLocation: (state, action) => {
+			state.location = action.payload;
+			let user = JSON.parse(localStorage.getItem('user'));
+			user = {...user, location: action.payload};
+			localStorage.setItem('user', JSON.stringify(user));
 		},
 		delete: (state, action) => {
 			localStorage.setItem('user', null);

@@ -4,7 +4,7 @@ import Pagnition from './Pagnition';
 import Tab from './Tab';
 import '../../../assets/css/OurProduct.css';
 import { useState, useId, useEffect } from 'react';
-import axios from 'axios';
+import productApi from '../../../api/ProductApi';
 
 function OurProduct() {
 	const id = useId();
@@ -12,9 +12,10 @@ function OurProduct() {
 	const [pag, setPag] = useState({ start: 0, step: 60, tab: 'hot' });
 
 	useEffect(() => {
-		axios
-			.get(`http://localhost:5000/items/${pag.tab}/${pag.step}/${pag.start}`)
-			.then((data) => setItems(data.data));
+		productApi
+			.getProducts(pag.tab, pag.step, pag.start)
+			.then((response) => setItems(response))
+			.catch((err) => console.log(err));
 	}, [pag]);
 
 	function changeTab(tab) {

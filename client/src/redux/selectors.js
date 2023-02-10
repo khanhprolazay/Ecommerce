@@ -18,6 +18,8 @@ export const getNumberOfAllItems = (state) => state.items.numberItems;
 
 export const getFilterByStatus = (state) => state.filter.byStatus;
 
+export const getUserLocation = (state) => state.user.location;
+
 
 export const getNumberOfItemsInCart = createSelector(
 	getUserItems,

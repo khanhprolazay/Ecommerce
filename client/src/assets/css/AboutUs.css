@@ -33,6 +33,7 @@ img[alt='aboutus-img'] {
     font-size: 68px;
     line-height: 78px;
     margin: 0 0 0 0;
+    color: var(--brown-color);
     
 }
 
@@ -42,6 +43,7 @@ img[alt='aboutus-img'] {
     line-height: 180%;
     margin: 0 0 0 0;
     font-family: 'Lato', sans-serif;
+    color: var(--brown-color);
 }
 
 .aboutus-list-container {

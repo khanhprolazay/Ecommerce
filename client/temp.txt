@@ -1,0 +1,72 @@
+{
+    "results": [
+        {
+            "address": "33/4 (Nha Tho Tan Phu) Đ. Độc Lập, Tân Thành, Tân Phú, Thành phố Hồ Chí Minh, Vietnam",
+            "country": "Vietnam",
+            "region": "Thành phố Hồ Chí Minh",
+            "area": "Tân Phú",
+            "street": "Đường Độc Lập",
+            "house": "33/4 (Nha Tho Tan Phu)",
+            "location": {
+                "lat": 10.79132,
+                "lng": 106.634805
+            },
+            "location_type": "exact",
+            "type": "street_address"
+        },
+        {
+            "address": "90 Nguyễn Hậu, Tân Thành, Tân Phú, Thành phố Hồ Chí Minh, Vietnam",
+            "country": "Vietnam",
+            "region": "Thành phố Hồ Chí Minh",
+            "area": "Tân Phú",
+            "street": "Nguyễn Hậu",
+            "house": "90",
+            "location": {
+                "lat": 10.791442,
+                "lng": 106.634732
+            },
+            "location_type": "exact",
+            "type": "poi"
+        },
+        {
+            "address": "33/4 Thống Nhất, Tân Thành, Tân Phú, Thành phố Hồ Chí Minh, Vietnam",
+            "country": "Vietnam",
+            "region": "Thành phố Hồ Chí Minh",
+            "area": "Tân Phú",
+            "street": "Thống Nhất",
+            "house": "33/4",
+            "location": {
+                "lat": 10.791042,
+                "lng": 106.634522
+            },
+            "location_type": "exact",
+            "type": "street_address"
+        },
+        {
+            "address": "QJRM+FR Tân Phú, Ho Chi Minh City, Vietnam",
+            "country": "Vietnam",
+            "region": "Ho Chi Minh City",
+            "area": "Tân Phú",
+            "location": {
+                "lat": 10.791252,
+                "lng": 106.634642
+            },
+            "location_type": "centroid",
+            "type": "poi"
+        },
+        {
+            "address": "103 Thống Nhất, Tân Thành, Tân Phú, Thành phố Hồ Chí Minh, Vietnam",
+            "country": "Vietnam",
+            "region": "Thành phố Hồ Chí Minh",
+            "area": "Tân Phú",
+            "street": "Thống Nhất",
+            "house": "103",
+            "location": {
+                "lat": 10.790694,
+                "lng": 106.634609
+            },
+            "location_type": "approximate",
+            "type": "street_address"
+        }
+    ]
+}

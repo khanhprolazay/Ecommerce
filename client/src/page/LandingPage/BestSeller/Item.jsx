@@ -1,7 +1,7 @@
-import Star from '../Start';
+import Star from '../../../components/Stars';
 import { useDispatch } from 'react-redux';
-import { formatCash } from '../../utils/index';
-import { itemsSlice } from "../../redux/slice/ItemsSlice";
+import { formatCash } from '../../../utils/index';
+import { itemsSlice } from "../../../redux/slice/ItemsSlice";
 
 function BestSellerItem(props) {
     const item = props.item;

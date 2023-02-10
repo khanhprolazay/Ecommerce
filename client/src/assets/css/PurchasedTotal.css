@@ -4,9 +4,9 @@
     align-items: stretch;
     border: 1px dashed #34251F;
     padding: 15px 0px;
-    position: -webkit-sticky;
+    /* position: -webkit-sticky;
     position: sticky;
-    bottom: 0px;
+    bottom: 0px; */
 
 }
 

@@ -1,32 +1,28 @@
-const couchDB = require('../resource/dbConfig');
-const axios = require('axios');
-const { v4: uuidv4 } = require('uuid');
 const checkFieldObject = require('../utils/CheckFieldObject');
 const CartModel = require('../models/CartModel');
-const UserModel = require('../models/UserModel');
 
 class CartController {
-	#dbName
+	#dbName;
 
 	constructor() {
 		this.#dbName = 'user';
 	}
 
 	//[GET] /carts/:username
-	getItemOfUser = (req, res, next) => {
+	getProductOfUser = (req, res, next) => {
 		if (!checkFieldObject(req.params, 'username')) {
 			res.sendStatus(400);
 			return;
 		}
 		const username = req.params.username;
 
-		CartModel.getItemsByUsername(username)
+		CartModel.getProductsByUsername(username)
 			.then((items) => res.send(items))
 			.catch((err) => res.send(err));
-	}
+	};
 
 	//[POST]/carts/put
-	insertItemToCart = async (req, res, next) => {
+	insertProduct = async (req, res, next) => {
 		if (
 			!checkFieldObject(req.body, 'username') ||
 			!checkFieldObject(req.body, 'itemId') ||
@@ -43,24 +39,47 @@ class CartController {
 		const quantity = req.body.quantity;
 		const size = req.body.size;
 		const color = req.body.color;
-		const isItemAlreadyInCart = await CartModel.isItemAlreadyInCart(username, itemId);
+		const isItemAlreadyInCart = await CartModel.isAlreadyHaveProduct(
+			username,
+			itemId
+		);
 
 		if (isItemAlreadyInCart) {
 			res.status(204).send('Sản phẩm đã có sẵn trong giỏ hàng!');
 			return;
 		}
 
-		CartModel.insertItemToCart(username, {
+		CartModel.insertProduct(username, {
 			itemId: itemId,
 			quantity: quantity,
 			size: size,
 			color: color,
-			status: 'in_cart', 
+			status: 'in_cart',
 			shipFee: 12000,
-		})	.then(() => res.status(200).send('Sản phẩm đã được thêm vào giỏ hàng thành công!'))
+		})
+			.then(() =>
+				res.status(200).send('Sản phẩm đã được thêm vào giỏ hàng thành công!')
+			)
 			.catch((err) => res.send(err));
+	};
 
-	}
+	//[POST]/carts/delete
+	deleteProduct = async (req, res, next) => {
+		if (
+			!checkFieldObject(req.body, 'itemId') ||
+			!checkFieldObject(req.body, 'username')
+		) {
+			res.sendStatus(400);
+			return;
+		}
+
+		const username = req.body.username;
+		const itemId = req.body.itemId;
+		
+		CartModel.deleteProduct(username, itemId)
+			.then(() => res.sendStatus(200))
+			.catch((err) => res.send(err));
+	};
 
 	//[POST] /carts/order
 	order = (req, res, next) => {
@@ -79,10 +98,8 @@ class CartController {
 
 		CartModel.order(username, cart)
 			.then((data) => res.status(200).send(data))
-			.catch((err) => res.send(err))
-	}
+			.catch((err) => res.send(err));
+	};
 }
-
-
 
 module.exports = new CartController();

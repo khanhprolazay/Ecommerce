@@ -31,13 +31,12 @@ export const itemsSlice = createSlice({
 
 		userItemsUpdateQuantity: (state, action) => {
 			// Get information from action.payload
-			const orderId = action.payload.orderId;
+			const itemId = action.payload.itemId;
 			const quantity = action.payload.quantity;
 			const shipFee = action.payload.shipFee;
 			
 			//Update quantity and shipfee to items in redux store and local storage
-			const index = state.userItems.findIndex(item => item.orderId === orderId);
-			state.userItems[index].orderId = orderId;
+			const index = state.userItems.findIndex(item => item.itemId === itemId && item.status === 'in_cart' );
 			state.userItems[index].quantity = quantity;
 			state.userItems[index].shipFee = shipFee;
 
@@ -46,6 +45,14 @@ export const itemsSlice = createSlice({
 
 		setNumberItems: (state, action) => {
 			state.numberItems = action.payload;
+		},
+
+		deleteItemInCart: (state, action) => {
+			state.userItems = state.userItems.filter(item => item.itemId !== action.payload.itemId);
+			let user = JSON.parse(localStorage.getItem('user'));
+			user = {...user, items: state.userItems};
+			localStorage.setItem('user', JSON.stringify(user));
+			localStorage.setItem('items', JSON.stringify(state.userItems));
 		}
 	}
 })

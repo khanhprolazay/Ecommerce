@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { itemsSlice } from "../../redux/slice/ItemsSlice";
+import { itemsSlice } from "../../../redux/slice/ItemsSlice";
 
 function NewCollectionItem(props) {
     const item = props.item;

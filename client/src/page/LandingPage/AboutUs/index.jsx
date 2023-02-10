@@ -1,6 +1,6 @@
 import AboutUsItem from './Item';
-import Vecto from '../Vecto';
-import '../../assets/css/AboutUs.css';
+import Vecto from '../../../components/Vecto';
+import '../../../assets/css/AboutUs.css';
 
 function AboutUs() {
     const vecto = { top: '20%', left: '42%', zIndex: '3' };
@@ -8,7 +8,7 @@ function AboutUs() {
         <div className='container-1139 aboutus-container'>
             <div className='aboutus-img-container'>
                 <img
-                    src={require('../../assets/img/aboutus-img.jpg').default}
+                    src={require('../../../assets/img/aboutus-img.jpg').default}
                     alt='aboutus-img'
                 />
             </div>

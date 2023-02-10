@@ -19,7 +19,7 @@ function Item(props) {
 				width: '100%',
 				backgroundColor: 'white',
 				boxShadow: '0 5px 10px rgba(0,0,0,0.25)',
-                borderRadius: '10px',
+				borderRadius: '10px',
 			}}>
 			<div
 				className='container-item width'

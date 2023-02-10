@@ -1,6 +1,6 @@
-import '../assets/css/HeadingCategory.css';
+import '../../assets/css/HeadingCategory.css';
 
-function HeadingCategory() {
+function Category() {
 	return (
 		<section>
 			<div
@@ -39,4 +39,4 @@ function HeadingCategory() {
 		</section>
 	);
 }
-export default HeadingCategory;
+export default Category;

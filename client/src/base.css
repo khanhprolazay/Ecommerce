@@ -8,11 +8,13 @@
 	--heavyblue-color: #001e54;
 	--gray-color: #f3f3f3;
 	--bluetext-color: #2361ff;
+	--red-color: #C20A0A;
+	--brown-color: #34251F;
+	
 }
 
 * {
 	box-sizing: inherit; /*Kế thừa*/
-	z-index: 3;
 	margin: 0 0;
 	padding: 0 0;
 	font-family: 'Lato', sans-serif;

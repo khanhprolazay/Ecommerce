@@ -12,7 +12,7 @@ class UserModel {
 	async findByUsernameAndPassword(username, password) {
 		const query = {
 			selector: { username: username, password: password },
-			fields: ['_id', '_rev', 'username', 'fullname', 'image', 'number', 'items', 'refreshToken'],
+			fields: ['_id', '_rev', 'username', 'fullname', 'image', 'number', 'items', 'refreshToken', 'location'],
 		};
 		const data = await couchDB.mango(this.#dbName, query);
 		return data.data.docs[0];

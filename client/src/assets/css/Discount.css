@@ -16,6 +16,7 @@ img[alt="discount-img"] {
     height: 460px;
     margin-top: 44px;
     margin-right: 111px;
+    z-index: 100;
 }
 .discount-heading {
     font-family: 'Frank Ruhl Libre';

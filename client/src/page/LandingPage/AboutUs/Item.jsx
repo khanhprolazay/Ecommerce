@@ -8,6 +8,7 @@ function AboutUsItem(props) {
         margin: '0 0 0 0',
         display: 'flex',
         justifyContent: 'space-around',
+        color: 'var(--brown-color)',
     };
     const aboutusNor = {
         fontFamily: 'Lato',
@@ -15,6 +16,7 @@ function AboutUsItem(props) {
         fontSize: '18px',
         textTransform: 'capitalize',
         margin: '0 0 0 0',
+        color: 'var(--brown-color)',
     };
     const aboutusItemContainer = {
         flexDirection: 'column',
