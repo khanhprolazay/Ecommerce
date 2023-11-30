@@ -21,6 +21,7 @@ function LoginForm(props) {
 		userApi
 			.login(username, password)
 			.then((response) => {
+				console.log(response)
 				//Storage token
 				localStorage.setItem('accessToken', response.accessToken);
 				localStorage.setItem('refreshToken', response.refreshToken);

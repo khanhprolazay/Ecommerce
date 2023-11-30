@@ -3,7 +3,7 @@ import '../assets/css/Footer.css';
 
 function Footer() {
     return (
-        <section className='footer'>
+        <footer className='footer'>
             <div className='container-1056 footer-container'>
                 <ul className='footer-category'>
                     <li className='footer-category-item'>MEN</li>
@@ -15,7 +15,7 @@ function Footer() {
                 </ul>
             </div>
             <p className='footer-rightlaw'>© 2021 FIFAH. All Right Reserved</p>
-        </section>
+        </footer>
     );
 }
 export default React.memo(Footer, () => true);

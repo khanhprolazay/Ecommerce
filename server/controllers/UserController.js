@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const checkFieldObject = require('../utils/checkFieldObject');
+const checkFieldObject = require('../utils/CheckFieldObject');
 const UserModel = require('../models/UserModel');
 
 const defaultLocation = {

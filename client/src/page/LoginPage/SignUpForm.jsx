@@ -12,7 +12,7 @@ function SignUpForm(props) {
 	const checkSignUp = () => {
 		setState({ ...state, state: 'loading' });
 		axios
-			.post('http://localhost:5500/signup', {
+			.post(`${process.env.REACT_APP_API_AUTH_SERVER_URL}/signup`, {
 				username: username,
 				password: password,
 				repassword: repassword,

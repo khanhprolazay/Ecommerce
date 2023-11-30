@@ -160,6 +160,7 @@ img[alt='category-avatar'] {
 .history-menu-wrapper ul #history-menu-notify:checked ~ li.history-menu-notify ul,
 .history-menu-wrapper ul #history-menu-logout:checked ~ li.history-menu-logout ul {
     max-height: 200px;
+    height: fit-content;
     opacity: 1;
     padding-left: 23px;
 }

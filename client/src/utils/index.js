@@ -26,11 +26,11 @@ export const formatCash = (cash) => {
 
 export async function getNewAccessToken(refreshToken) {
 	const body = { token: refreshToken };
-	const datafromServer = await axios.post(
-		'http://localhost:5500/refreshToken',
+	const response = await axios.post(
+		`${process.env.REACT_APP_API_SERVER_URL}/user/refreshToken`,
 		body
 	);
-	return datafromServer.data.accessToken;
+	return response.data.accessToken;
 }
 
 export const getLocalAccessToken = () => {
@@ -42,7 +42,11 @@ export const getLocalRefreshToken = () => {
 };
 
 const isTokenExpried = (token) => {
-	return jwt.decode(token).exp < Date.now() / 1000;
+	try {
+		return jwt.decode(token).exp < Date.now() / 1000;
+	} catch {
+		return false;
+	}
 };
 
 export const isAccessTokenExpried = () => {
